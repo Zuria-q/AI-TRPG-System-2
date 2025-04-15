@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-600 text-white hover:bg-secondary-700;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  
+  .btn-info {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-sm {
+    @apply px-2 py-1 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-6 py-3 text-lg;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4;
+  }
+  
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md 
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+  
+  .select {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+  
+  .textarea {
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md
+           bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
+           focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+  
+  /* 游戏界面特定样式 */
+  .game-container {
+    @apply flex flex-col md:flex-row h-screen overflow-hidden;
+  }
+  
+  .game-sidebar {
+    @apply w-full md:w-80 lg:w-96 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 overflow-y-auto;
+  }
+  
+  .game-content {
+    @apply flex-1 overflow-y-auto p-4;
+  }
+  
+  .character-card {
+    @apply flex items-center p-3 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer;
+  }
+  
+  .message-bubble {
+    @apply rounded-lg p-3 my-2 max-w-3xl;
+  }
+  
+  .message-user {
+    @apply bg-primary-100 dark:bg-primary-900 text-primary-900 dark:text-primary-100 ml-auto;
+  }
+  
+  .message-npc {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 mr-auto;
+  }
+  
+  .message-system {
+    @apply bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 mx-auto text-center;
+  }
+}
