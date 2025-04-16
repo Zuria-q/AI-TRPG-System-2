@@ -1,81 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI-TRPG 叙事系统</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #6366f1;
-      text-align: center;
-    }
-    .card {
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background-color: #6366f1;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #4f46e5;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>AI-TRPG 叙事系统</h1>
-    
-    <div class="card">
-      <h2>欢迎来到AI-TRPG叙事系统</h2>
-      <p>这是一个模块化的AI角色扮演跑团式叙事系统。通过与AI控制的NPC互动，您可以在自定义的世界观中创造独特的故事。</p>
-    </div>
-    
-    <div class="card">
-      <h3>示例对话</h3>
-      <p><strong>旅店老板：</strong>欢迎来到「银月旅店」，旅行者。你看起来风尘仆仆，需要休息一下吗？或者你是为了那个传言而来？</p>
-      <p><strong>玩家：</strong>什么传言？我只是路过这里，想找个地方休息。</p>
-    </div>
-    
-    <div style="text-align: center;">
-      <button id="counter-btn" class="btn">点击计数: <span id="counter">0</span></button>
-      <p><small>正在开发中，敬请期待更多功能...</small></p>
-    </div>
-  </div>
-
-  <script>
-    // 简单的计数器功能
-    const counterBtn = document.getElementById('counter-btn');
-    const counterSpan = document.getElementById('counter');
-    let count = 0;
-    
-    counterBtn.addEventListener('click', () => {
-      count++;
-      counterSpan.textContent = count;
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/AI-TRPG-System-2/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-TRPG 叙事系统</title>
+    <meta name="description" content="AI驱动的跑团式叙事系统，支持多角色互动与故事生�? />
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div id="root"></div>
+  </body>
 </html>
+
