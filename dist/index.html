@@ -1,115 +1,81 @@
-﻿<!DOCTYPE html>
-<html lang=" zh-CN\>
- <head>
- <meta charset=\UTF-8\ />
- <link rel=\icon\ type=\image/svg+xml\ href=\/AI-TRPG-System-2/favicon.svg\ />
- <meta name=\viewport\ content=\width=device-width initial-scale=1.0\ />
- <title>AI-TRPG 叙事系统</title>
- <meta name=\description\ content=\AI驱动的跑团式叙事系统，支持多角色互动与故事生成\ />
- <link rel=\stylesheet\ href=\/AI-TRPG-System-2/styles.css\ />
- </head>
- <body>
- <div class=\app-container\>
- <!-- 顶部导航栏 -->
- <header class=\app-header\>
- <div class=\header-content\>
- <h1 class=\app-title\>AI-TRPG 叙事系统</h1>
- <div class=\header-controls\>
- <button id=\dark-mode-toggle\ class=\icon-button\>
- <svg xmlns=\http://www.w3.org/2000/svg\ viewBox=\0 0 24 24\ fill=\currentColor\ class=\w-6 h-6\>
- <path fill-rule=\evenodd\ d=\M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z\ clip-rule=\evenodd\ />
- </svg>
- </button>
- </div>
- </div>
- </header>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-TRPG 叙事系统</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #6366f1;
+      text-align: center;
+    }
+    .card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #6366f1;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI-TRPG 叙事系统</h1>
+    
+    <div class="card">
+      <h2>欢迎来到AI-TRPG叙事系统</h2>
+      <p>这是一个模块化的AI角色扮演跑团式叙事系统。通过与AI控制的NPC互动，您可以在自定义的世界观中创造独特的故事。</p>
+    </div>
+    
+    <div class="card">
+      <h3>示例对话</h3>
+      <p><strong>旅店老板：</strong>欢迎来到「银月旅店」，旅行者。你看起来风尘仆仆，需要休息一下吗？或者你是为了那个传言而来？</p>
+      <p><strong>玩家：</strong>什么传言？我只是路过这里，想找个地方休息。</p>
+    </div>
+    
+    <div style="text-align: center;">
+      <button id="counter-btn" class="btn">点击计数: <span id="counter">0</span></button>
+      <p><small>正在开发中，敬请期待更多功能...</small></p>
+    </div>
+  </div>
 
- <!-- 主要内容区域 -->
- <main class=\app-main\>
- <div class=\tabs-container\>
- <div class=\tabs-header\>
- <button class=\tab-button active\ data-tab=\game\>游戏</button>
- <button class=\tab-button\ data-tab=\characters\>角色</button>
- <button class=\tab-button\ data-tab=\worldbook\>世界书</button>
- <button class=\tab-button\ data-tab=\settings\>设置</button>
- </div>
- 
- <div class=\tabs-content\>
- <!-- 游戏标签页 -->
- <div class=\tab-panel active\ id=\game-panel\>
- <div class=\game-container\>
- <div class=\game-content\>
- <div class=\response-display\>
- <div class=\message system-message\>
- <p>欢迎来到 AI-TRPG 叙事系统！</p>
- <p>这是一个模块化的 AI 角色扮演跑团式叙事系统。通过与 AI 控制的 NPC 互动，您可以在自定义的世界观中创造独特的故事。</p>
- </div>
- <div class=\message npc-message\>
- <div class=\message-header\>
- <span class=\npc-name\>旅店老板</span>
- </div>
- <p>欢迎来到「银月旅店」，旅行者。你看起来风尘仆仆，需要休息一下吗？或者你是为了那个传言而来？</p>
- </div>
- <div class=\message player-message\>
- <div class=\message-header\>
- <span class=\player-name\>玩家</span>
- </div>
- <p>什么传言？我只是路过这里，想找个地方休息。</p>
- </div>
- </div>
- 
- <div class=\action-panel\>
- <div class=\action-input-container\>
- <textarea id=\action-input\ placeholder=\描述你的行动...\></textarea>
- <div class=\action-controls\>
- <button id=\send-action\ class=\primary-button\>发送</button>
- </div>
- </div>
- <div class=\action-options\>
- <button class=\action-option\>询问传言</button>
- <button class=\action-option\>租房间</button>
- <button class=\action-option\>离开旅店</button>
- </div>
- </div>
- </div>
- 
- <div class=\game-sidebar\>
- <div class=\game-state-display\>
- <h3>游戏状态</h3>
- <div class=\state-item\>
- <span class=\state-label\>当前位置:</span>
- <span class=\state-value\>银月旅店</span>
- </div>
- <div class=\state-item\>
- <span class=\state-label\>时间:</span>
- <span class=\state-value\>傍晚</span>
- </div>
- <div class=\state-item\>
- <span class=\state-label\>天气:</span>
- <span class=\state-value\>小雨</span>
- </div>
- </div>
- </div>
- </div>
- </div>
- 
- <!-- 其他标签页内容会在后续添加 -->
- <div class=\tab-panel\ id=\characters-panel\>
- <p class=\placeholder-text\>角色面板将在后续更新中添加</p>
- </div>
- 
- <div class=\tab-panel\ id=\worldbook-panel\>
- <p class=\placeholder-text\>世界书面板将在后续更新中添加</p>
- </div>
- 
- <div class=\tab-panel\ id=\settings-panel\>
- <p class=\placeholder-text\>设置面板将在后续更新中添加</p>
- </div>
- </div>
- </div>
- </main>
- </div>
- 
- <script src=\/AI-TRPG-System-2/main.js\></script>
- </body>
+  <script>
+    // 简单的计数器功能
+    const counterBtn = document.getElementById('counter-btn');
+    const counterSpan = document.getElementById('counter');
+    let count = 0;
+    
+    counterBtn.addEventListener('click', () => {
+      count++;
+      counterSpan.textContent = count;
+    });
+  </script>
+</body>
 </html>
